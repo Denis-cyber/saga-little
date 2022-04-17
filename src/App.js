@@ -10,7 +10,7 @@ function App() {
   return (
     <div>
       redux-saga
-      <button onClick={() => dispatch({type: 'LOAD_DATA'})}>Click me</button>
+      <button onClick={() => dispatch({type: 'SAGA_START'})}>Click me</button>
     </div>
   );
 }
