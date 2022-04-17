@@ -5,13 +5,13 @@ const initialState = {
 
 export const rootReducer = (state = initialState, action) => {
   switch (action.type) {
-    case 'SET_PEOPLE': {
+    case 'GET_PEOPLE': {
       return {
         ...state,
         people: [...state.people, ...action.payload],
       }
     }
-    case 'SET_PLANETS': {
+    case 'GET_PLANETS': {
       return {
         ...state,
         planets: [...state.planets, ...action.payload],

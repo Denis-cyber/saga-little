@@ -6,12 +6,12 @@ async function fetchData(param){
 
 function* loadPeople() {
   const {results} = yield call(fetchData, 'people');
-  yield put({type: 'SET_PEOPLE', payload: results})
+  yield put({type: 'GET_PEOPLE', payload: results})
 }
 
 function* loadPlanets() {
   const {results} = yield call(fetchData, 'planets');
-  yield put({type: 'SET_PLANETS', payload: results})
+  yield put({type: 'GET_PLANETS', payload: results})
 }
 
 function* workerSaga() {
@@ -20,7 +20,7 @@ function* workerSaga() {
 }
 
 function* watchLoadSaga() {
-  yield takeEvery('LOAD_DATA', workerSaga)
+  yield takeEvery('SAGA_START', workerSaga)
 }
 
 export function* rootSaga() {
